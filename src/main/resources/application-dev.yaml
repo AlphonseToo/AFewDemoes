@@ -1,0 +1,9 @@
+debug: true
+cpuSize: i7-8700K
+age: 1
+context: "cpusize: ${cpuSize} + age:${age}" #zhujei
+
+man:
+  a: abc
+  b: abc
+  c: 21

@@ -1,0 +1,11 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /test
+man:
+  a: aaa
+  b: bbb
+  c: 21
+spring:
+  profiles:
+    active: dev

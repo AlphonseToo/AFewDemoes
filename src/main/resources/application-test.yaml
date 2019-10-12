@@ -1,0 +1,4 @@
+debug: false
+cpuSize: i5-7200U
+age: 3
+context: "cpusize: ${cpuSize} + age:${age}" #zhujei
