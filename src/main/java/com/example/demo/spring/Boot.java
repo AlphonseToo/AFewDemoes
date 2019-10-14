@@ -12,5 +12,15 @@ import lombok.Data;
 @Data
 public class Boot {
     private String player;
-    private String level;
+    private int level;
+
+    public Boot() {
+        this.player = "独孤求败";
+        this.level = 49;
+    }
+
+    public Boot(String player, int level) {
+        this.player = player;
+        this.level = level;
+    }
 }
