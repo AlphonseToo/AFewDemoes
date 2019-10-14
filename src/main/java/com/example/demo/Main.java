@@ -49,13 +49,13 @@ public class Main {
 
     @Override
     public String toString() {
-        return "Main{" +
-                "boot=" + boot +
-                ", user1=" + user1 +
-                ", aClass=" + aClass.gg() +
-                ", bClass=" + bClass.gg() +
-                ", computer=" + computer +
-                '}';
+        return "Main{\n" +
+                "\tboot=" + boot +
+                ",\n\tuser1=" + user1 +
+                ",\n\taClass=" + aClass.gg() +
+                ",\n\tbClass=" + bClass.gg() +
+                ",\n\tcomputer=" + computer +
+                "\n}";
     }
     //quxiaozhushi
 }
