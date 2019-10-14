@@ -40,7 +40,7 @@ public class Practice {
         b = 0x80000000;
     }
     //无用的注释
-
+    //无用的注释。
     @Override
     public String toString() {
         return "Practice{" +
