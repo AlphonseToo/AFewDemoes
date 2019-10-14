@@ -1,5 +1,7 @@
 package com.example.demo.conditionalOnClass.bean;
 
+import lombok.Data;
+
 /**
  * @ClassName: BClass
  * @Description: BClass
@@ -7,9 +9,10 @@ package com.example.demo.conditionalOnClass.bean;
  * @Version: 1.0
  * @Date: 2019/10/12 17:58
  **/
+@Data
 public class BClass implements Asy {
     @Override
-    public void gg() {
-        System.out.println("xxyy");
+    public String gg() {
+        return "Fight for xxyy";
     }
 }

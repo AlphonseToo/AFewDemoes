@@ -1,9 +1,7 @@
 package com.example.demo.conditionalOnClass;
 
 import com.example.demo.conditionalOnClass.bean.Asy;
-import com.example.demo.conditionalOnClass.config.MyConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * @ClassName: Test
@@ -18,11 +16,8 @@ public class Test {
     private Asy asy;
     public static void main(String[] args) {
 
-        AnnotationConfigApplicationContext applicationContext2 = new AnnotationConfigApplicationContext(MyConfig.class);
-        String[] beanNames = applicationContext2.getBeanDefinitionNames();
-        for(int i=0;i<beanNames.length;i++){
-            System.out.println("bean名称为==="+beanNames[i]);
-        }
+        Test test = new Test();
+        test.func1();
     }
 
     public void func1() {

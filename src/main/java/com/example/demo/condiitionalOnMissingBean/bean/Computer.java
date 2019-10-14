@@ -15,4 +15,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class Computer {
     public String name;
+
+    public Computer() {
+        this.name = "notebook";
+    }
 }

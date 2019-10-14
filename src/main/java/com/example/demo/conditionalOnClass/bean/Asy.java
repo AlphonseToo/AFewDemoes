@@ -9,5 +9,5 @@ package com.example.demo.conditionalOnClass.bean;
  **/
 public interface Asy {
 
-    void gg();
+    String gg();
 }

@@ -1,5 +1,7 @@
 package com.example.demo.conditionDemo.bean;
 
+import lombok.Data;
+
 /**
  * @ClassName: User1
  * @Description: User1
@@ -7,6 +9,7 @@ package com.example.demo.conditionDemo.bean;
  * @Version: 1.0
  * @Date: 2019/10/12 11:49
  **/
+@Data
 public class User1 {
     private String name;
     private int age;
