@@ -5,6 +5,7 @@ import com.example.demo.conditionDemo.bean.User1;
 import com.example.demo.conditionalOnClass.bean.AClass;
 import com.example.demo.conditionalOnClass.bean.BClass;
 import com.example.demo.spring.Boot;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -15,6 +16,7 @@ import lombok.Data;
  * @since 1.0
  **/
 @Data
+@AllArgsConstructor
 public class Main {
     private Boot boot;
     private User1 user1;
@@ -25,18 +27,11 @@ public class Main {
     public static void main(String[] args) {
         Main main = new Main();
         System.out.println(main.toString());
+
     }
 
     public Main() {
         init();
-    }
-
-    public Main(Boot boot, User1 user1, AClass aClass, BClass bClass, Computer computer) {
-        this.boot = boot;
-        this.user1 = user1;
-        this.aClass = aClass;
-        this.bClass = bClass;
-        this.computer = computer;
     }
 
     private void init() {
@@ -57,5 +52,4 @@ public class Main {
                 ",\n\tcomputer=" + computer +
                 "\n}";
     }
-    //quxiaozhushi
 }
