@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @ClassName: BookDetial
- * @Description: TODO
+ * @Description: BookDetial
  * @Author: Alphonse
  * @Version: 1.0
  * @Date: 2019/9/25 14:47

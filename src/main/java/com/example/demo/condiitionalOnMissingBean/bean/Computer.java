@@ -5,7 +5,7 @@ import lombok.Data;
 
 /**
  * @ClassName: Computer
- * @Description: TODO
+ * @Description: Computer
  * @Author: Alphonse
  * @Version: 1.0
  * @Date: 2019/10/12 13:53

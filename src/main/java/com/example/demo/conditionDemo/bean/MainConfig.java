@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @ClassName: MainConfig
- * @Description: TODO
+ * @Description: MainConfig
  * @Author: Alphonse
  * @Version: 1.0
  * @Date: 2019/10/12 13:39

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @ClassName: BeanConfig
- * @Description: TODO
+ * @Description: BeanConfig
  * @Author: Alphonse
  * @Version: 1.0
  * @Date: 2019/10/12 13:59

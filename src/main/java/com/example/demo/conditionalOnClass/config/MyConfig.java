@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @ClassName: MyConfig
- * @Description: TODO
+ * @Description: MyConfig
  * @Author: Alphonse
  * @Version: 1.0
  * @Date: 2019/10/12 17:43

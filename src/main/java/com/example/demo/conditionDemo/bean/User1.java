@@ -2,7 +2,7 @@ package com.example.demo.conditionDemo.bean;
 
 /**
  * @ClassName: User1
- * @Description: TODO
+ * @Description: User1
  * @Author: Alphonse
  * @Version: 1.0
  * @Date: 2019/10/12 11:49

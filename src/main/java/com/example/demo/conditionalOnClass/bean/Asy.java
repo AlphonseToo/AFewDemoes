@@ -2,7 +2,7 @@ package com.example.demo.conditionalOnClass.bean;
 
 /**
  * @ClassName: Asy
- * @Description: TODO
+ * @Description: Asy
  * @Author: Alphonse
  * @Version: 1.0
  * @Date: 2019/10/12 17:41

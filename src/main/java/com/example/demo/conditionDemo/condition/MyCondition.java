@@ -7,7 +7,7 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
  * @ClassName: MyConditon
- * @Description: TODO
+ * @Description: MyConditon
  * @Author: Alphonse
  * @Version: 1.0
  * @Date: 2019/10/12 11:45
