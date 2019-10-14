@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.swing.JButton;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,12 +24,7 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
         new Thread(() -> System.out.println("here!")).start();
         JButton show = new JButton("Show");
-        show.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                e.getActionCommand();
-            }
-        });
+        show.addActionListener(e -> e.getActionCommand());
         show.addActionListener(e -> System.out.println("Listener."));
 
         List<String> features = Arrays.asList("1", "22", "33", "4");

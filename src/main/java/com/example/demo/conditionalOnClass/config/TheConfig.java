@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * @Version: 1.0
  * @Date: 2019/10/12 18:01
  **/
-@Configuration
+@Configuration()
 @ConditionalOnClass({BClass.class})
 public class TheConfig {
     @Bean("AClass")
