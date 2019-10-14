@@ -1,12 +1,11 @@
 package com.example.demo;
 
 /**
- * @ClassName: Main
- * @Description: 主控制类
- * @Author: Alphonse
- * @Version: 1.0
- * @Date: 2019/10/14 11:03
+ * 主控制类
+ *
+ * @author Alphonse
+ * @date 2019/10/14 11:19
+ * @since 1.0
  **/
 public class Main {
-
 }
