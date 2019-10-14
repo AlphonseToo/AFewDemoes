@@ -39,6 +39,7 @@ public class Practice {
         a = random.nextInt(2);
         b = 0x80000000;
     }
+    //无用的注释
 
     @Override
     public String toString() {
