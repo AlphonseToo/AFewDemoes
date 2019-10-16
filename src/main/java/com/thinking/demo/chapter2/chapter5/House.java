@@ -21,7 +21,7 @@ public class House {
     Window w3= new Window(3);
 
     protected void finalize(){
-        System.out.println("cleanup!");
+        System.out.println("House cleanup!");
     }
 
     public static void main(String[] args) {

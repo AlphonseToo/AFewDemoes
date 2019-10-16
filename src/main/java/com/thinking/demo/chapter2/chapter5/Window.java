@@ -11,4 +11,8 @@ public class Window {
     Window(int maker) {
         System.out.println("Window(" + maker + ")");
     }
+
+    protected void finalize(){
+        System.out.println("Window cleanup!");
+    }
 }
