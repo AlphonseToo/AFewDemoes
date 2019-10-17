@@ -59,19 +59,19 @@ class Flower{
     int petalCount = 0;
     String s = "initial value";
     Flower(){
-        this("hi", 47);
+        this("hi", 47); //放在首行
         System.out.println("default constructor (no args)");
     }
     Flower(int petals){
         petalCount = petals;
-        System.out.println("Constructor w/ int arg only, petalCount= " + petalCount);
+        System.out.println("Constructor with int arg only, petalCount= " + petalCount);
     }
     Flower(String s, int petals){
-        this(petals);
+        this(petals); //放在首行
+        //this(1); //不能连续两次调用
         this.s = s;
         System.out.println("String & int args");
     }
-
     public static void main(String[] args){
         Flower x = new Flower();
     }
