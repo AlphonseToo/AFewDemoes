@@ -1,4 +1,4 @@
-package com.thinking.demo.chapter2.chapter5;
+package com.thinking.demo.chapter5;
 
 public class Output extends House{
     House h1 = new House();
