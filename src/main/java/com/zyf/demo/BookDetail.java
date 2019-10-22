@@ -12,10 +12,10 @@ import lombok.Data;
 
 @Data
 public class BookDetail {
-    private int no;
-    private String name;
-    private String author;
-    private String introduction;
+    private int no = 1;
+    private String name = "Store";
+    private String author = "z";
+    private String introduction = "......";
 
     /*@Override
     public String toString() {
