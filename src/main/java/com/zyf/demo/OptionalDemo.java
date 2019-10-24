@@ -2,6 +2,8 @@ package com.zyf.demo;
 
 import lombok.Data;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 /**
@@ -21,6 +23,14 @@ public class OptionalDemo {
         optionalDemo.func();
         String ss = Optional.ofNullable(optionalDemo.getData()).orElse("1");
         System.out.println(ss);
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date = LocalDate.now();
+        String dateString = "2019-01-31";
+        date = LocalDate.parse(dateString, df);
+        //System.out.println(date.getDayOfWeek().toString());
+        System.out.println(date.toString());
+        System.out.println(date.plusDays(-23).toString());
+
     }
 
     void func(){
@@ -28,7 +38,7 @@ public class OptionalDemo {
         Optional<BookDetail> opt = Optional.of(bookDetail);
         opt.get().toString();
         System.out.println(opt.toString());
-        data = "da";
+        //data = "da";
     }
 
 }

@@ -11,6 +11,10 @@ import lombok.Data;
  **/
 @Data
 public class AClass implements Asy {
+    public AClass() {
+        System.out.println("Debug....");
+    }
+
     @Override
     public String gg() {
         return "Fight for aabb";

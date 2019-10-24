@@ -1,7 +1,9 @@
 package com.example.demo.conditionalOnClass;
 
+import com.example.demo.conditionalOnClass.bean.AClass;
 import com.example.demo.conditionalOnClass.bean.Asy;
 import org.springframework.beans.factory.annotation.Autowired;
+
 
 /**
  * @ClassName: Test
@@ -12,15 +14,22 @@ import org.springframework.beans.factory.annotation.Autowired;
  **/
 public class Test {
 
+    public static Boolean flag = true;
     @Autowired
     private Asy asy;
     public static void main(String[] args) {
-
-        Test test = new Test();
-        test.func1();
+        Test.condition();
     }
 
     public void func1() {
         asy.gg();
+    }
+
+    public static void condition() {
+        if(Test.flag){
+            AClass aClass = new AClass();
+        }else{
+            com.example.demo.conditionalOnClass.config.AClass aClass = new com.example.demo.conditionalOnClass.config.AClass();
+        }
     }
 }

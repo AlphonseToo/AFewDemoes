@@ -21,7 +21,7 @@ public class TheConfig {
     public Asy func1() {
         return new AClass();
     }
-
+    MyConfig myConfig = new MyConfig();
     @Bean("BClass")
     public Asy func2() {
         return new BClass();
