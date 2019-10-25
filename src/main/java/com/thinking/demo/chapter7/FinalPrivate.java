@@ -60,19 +60,26 @@ class Insect{
     Insect(){
         System.out.println("i="+i+"j="+j);
     }
+    static {
+        System.out.println("Insect static block1");
+    }
     static int x1 = printInit("Insect.x1 initialized");
     static {
-        System.out.println("Insect static block");
+        System.out.println("Insect static block2");
     }
     static int printInit(String s){
         System.out.println(s);
         return 47;
     }
+    void si(){}
 }
 
 public class FinalPrivate extends Insect{
     static {
         System.out.println("FinalPrivate static block");
+    }
+    void ff(){
+        super.si();
     }
     public static void main(String[] args){
         /*OverridePrivate2 op2 = new OverridePrivate2();

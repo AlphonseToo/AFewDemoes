@@ -16,4 +16,9 @@ public class A {
         name = 100;
         System.out.println("Class A: " + i);
     }
+
+    public int print(String s, int i){
+        System.out.println(s);
+        return i;
+    }
 }

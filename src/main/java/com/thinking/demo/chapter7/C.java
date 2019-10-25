@@ -21,6 +21,5 @@ public class C extends A {
         C c = new C(1);
         System.out.println(c.name);
         System.out.println(c.b);
-
     }
 }
