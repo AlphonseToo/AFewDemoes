@@ -14,8 +14,10 @@ public class Shapes {
         for (int i = 0; i < 5; i++) {
             s[i] = gen.next();
         }
-        for (Shape shape : s) {
+        Shape shape = new Circle();
+        shape.draw();
+        /*for (Shape shape : s) {
             shape.pp();
-        }
+        }*/
     }
 }
