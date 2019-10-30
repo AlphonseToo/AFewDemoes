@@ -50,3 +50,28 @@ class C13 extends C12{
         C12.func(c13);
     }
 }
+
+interface I11{
+    int g();
+    int f();
+}
+interface I12{
+    int f(int i);
+}
+interface I13 extends I11, I12{}
+class C14 implements I13{
+    @Override
+    public int f() {
+        return 0;
+    }
+
+    @Override
+    public int g() {
+        return 0;
+    }
+
+    @Override
+    public int f(int i) {
+        return 0;
+    }
+}
