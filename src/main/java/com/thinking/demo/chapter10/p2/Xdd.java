@@ -3,7 +3,7 @@ package com.thinking.demo.chapter10.p2;
 import com.thinking.demo.chapter10.p1.Inter;
 
 /**
- * TODO
+ * ~~~~
  *
  * @author Alphonse
  * @date 2019/10/29 15:53

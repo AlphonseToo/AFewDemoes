@@ -3,7 +3,7 @@ package com.thinking.demo.chapter8;
 import java.util.Random;
 
 /**
- * TODO
+ * ~~~~~~~~~
  *
  * @author Alphonse
  * @date 2019/10/24 17:45

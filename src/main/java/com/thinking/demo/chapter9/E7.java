@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * TODO
+ * ~~~~~~
  *
  * @author Alphonse
  * @date 2019/10/29 10:55
