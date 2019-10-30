@@ -35,3 +35,18 @@ class Ex{
         e1.print();
     }
 }
+
+abstract class C12{
+    static void func(C12 cc){
+        System.out.println(cc.toString());
+    }
+}
+class C13 extends C12{
+    void print(){
+        System.out.println("C13.print");
+    }
+    public static void main(String[] args){
+        C13 c13 = new C13();
+        C12.func(c13);
+    }
+}
