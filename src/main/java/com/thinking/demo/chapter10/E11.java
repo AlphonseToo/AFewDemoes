@@ -45,7 +45,6 @@ class Test{
         return new C3(ii){
             public int value(){
                 //ii = 9;
-                //ii = "789";
                 return super.value()*10;
             }
         };

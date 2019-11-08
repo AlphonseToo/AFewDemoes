@@ -19,7 +19,6 @@ public class Xdd {
             i = 100;
             j = 101;
         }
-
         @Override
         public void f() {
             k = 2;
