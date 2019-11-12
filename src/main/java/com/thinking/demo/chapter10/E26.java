@@ -1,7 +1,7 @@
 package com.thinking.demo.chapter10;
 
 /**
- * TODO
+ * 内部类
  *
  * @author Alphonse
  * @date 2019/11/1 10:11

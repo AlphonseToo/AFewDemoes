@@ -1,7 +1,7 @@
 package com.thinking.demo.chapter12;
 
 /**
- * TODO
+ * catch异常
  *
  * @author Alphonse
  * @date 2019/11/7 15:17
