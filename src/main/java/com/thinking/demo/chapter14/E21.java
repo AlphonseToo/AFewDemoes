@@ -75,7 +75,7 @@ class MethodSelector implements InvocationHandler {
         if (method.getName().equals("interesting")) {
             System.out.println("Proxy detected the interesting method");
         }
-        //System.out.println(proxy); // TODO ??在动态代理时，去调用toString方法 ，此时由于是代理，所以会再次调用invoke来调用toString方法
+        //System.out.println(proxy); // 在动态代理时，去调用proxy.toString()方法 ，此时由于是代理，所以会再次调用invoke来调用toString方法
         return method.invoke(proxied, args);
     }
 }
@@ -115,7 +115,7 @@ class Implementation implements SomeMethods {
         System.out.println("interesting " + arg);
     }
 }
-public class E21 {
+public class E21 { //E23
     public static void main(String[] args) {
         SomeMethods proxy = (SomeMethods) Proxy.newProxyInstance(SomeMethods.class.getClassLoader(),
                 new Class[]{SomeMethods.class},
