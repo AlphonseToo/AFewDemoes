@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 如果在继承关系中使用自限定类型，那么方法名相同，参数类型不同的方法就会被覆盖掉（override），如果不是自限定类型，就会重载（overload）,在子类和导出类都有个一盒相同名字的方法。
- * 在新的jdk8中子类继承的的父类中的同名方法的返回值可以被子类中的覆盖掉在jdk5之前的版本是不支持的。。
  *
  * @author Alphonse
  * @date 2019/11/20 09:28
@@ -38,7 +36,7 @@ class FixedSizeStack<T> {
     <T> void f(List<T> t){}
 }
 
-class A {}
+class A {void f(){}}
 class B extends A{}
 class Self <T extends Self<T>> {
     T element;

@@ -23,14 +23,15 @@ public class T4<T> {
     public static void main(String[] args) {
         List<? extends Fruit> list = new ArrayList<>();
         List<? extends Fruit> list1 = Arrays.asList(new Apple(), new Orange());
-        list1.get(2);
+        List<? super Apple> list2 = new ArrayList<>();
+        list2.add(new Apple());
         list.add(null);
         list.contains(new Apple());
-        //list.add(new Apple()); 不能通过编译，详情解释见P391(即424），因为add的参数涉及到通配符，而contains方法的参数是Object，所以可以这样使用
-        //list.add(new Object());
+        //list.add(new Apple());  // illegal
+        //list.add(new Object()); // illegal
         Number[] numList = new Integer[10];
         numList[0] = 5;
-        numList[1] = 2L;
+        numList[1] = 2;
 
         Holder<Integer> intHolder = new Holder<>(4);
         int num = intHolder.get();
@@ -49,8 +50,8 @@ public class T4<T> {
     }
     // TODO ***********************************
     /**
-     * 写数据用 <? super T> 存储数据，数据都是Object的继承类，它肯定能存Object对象的，可以理解为向上转型最终转型为Object。
-     * 读数据用 <? extends T> 读数据是为了使用该数据，所以结果越具体越好。
+     * 写数据用 <? super T> 存储数据，因为元素T是可以向上转型为T的或者T的父类的（最终转型为Object）。
+     * 读数据用 <? extends T> 读数据是类型为? extends T的元素保证是可以向上转换为T的。
      */
 }
 
@@ -109,11 +110,11 @@ class E29 {
     static void f2(Holder<?> holder) {
         f1(holder);
     }
-    //@SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
-        Holder holder = new Holder<Integer>(1);
-        f1(holder); //不会有warning TODO ？？
-        f2(holder);
+        Holder raw = new Holder<Integer>(1);
+        f1(raw); //会有warning
+        f2(raw);
         E29 e29 = new E29();
         List list = new ArrayList();
         list.add("String.class");
@@ -127,4 +128,4 @@ class E29 {
 }
 interface Payable<T> {}
 class Employee implements Payable {}
-class Hourly extends Employee implements Payable {}
+class Hourly extends Employee implements Payable{}
