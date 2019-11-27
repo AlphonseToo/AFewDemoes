@@ -12,6 +12,7 @@ import java.lang.reflect.Array;
 
 class SList<T> {
     private int capacity = 1;
+    private int size = 0;
     private T[] element;
 
     public SList(Class<T> c) {
@@ -19,8 +20,12 @@ class SList<T> {
     }
 
     public SListIterator<T> iterator() {
-        return new SListIterator<>(0, capacity, element);
+        return new SListIterator<>(size, capacity, element);
     }
+    public T get(int index) {
+        return element[index];
+    }
+    public int size() { return size; }
 
 }
 class SListIterator<T>{
@@ -90,6 +95,7 @@ public class E8 {
                 iterator.remove();
             System.out.println(s);
         }
+
         iterator.remove();
         iterator.remove();
         iterator.remove();
