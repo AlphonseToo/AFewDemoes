@@ -24,13 +24,6 @@ class DirFilter implements FilenameFilter {
     public boolean accept(File dir, String name) {
         return pattern.matcher(name).matches();
     }
-
-    public static void main(String[] args) {
-        String regex = ".*\\..*";
-        String name = ".git";
-        DirFilter dirFilter = new DirFilter(regex);
-        System.out.println(dirFilter.accept(null, name));
-    }
 }
 public class T1 {
     public static void main(String[] args) {
@@ -45,6 +38,5 @@ public class T1 {
         for(String item : list) {
             System.out.println(item);
         }
-
     }
 }

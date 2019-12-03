@@ -1,5 +1,7 @@
 package com.thinking.demo.chapter17;
 
+import com.thinking.demo.ConstConfig;
+
 import java.util.AbstractList;
 import java.util.AbstractMap;
 import java.util.AbstractSet;
@@ -27,7 +29,7 @@ class MyList extends AbstractList<Integer> {
 
     @Override
     public Integer get(int indexi) {
-        return Integer.valueOf(indexi++);
+        return indexi++;
     }
 
     @Override
