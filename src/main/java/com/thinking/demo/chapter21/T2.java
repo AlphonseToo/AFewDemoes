@@ -8,7 +8,7 @@ import java.util.concurrent.Future;
 
 /**
  * Callable中的call()方法和Runnable中的run()方法
- * call可以返回一个值
+ * call可以返回一个值，用submit来调用该任务，把返回结果封装在Future<?>中，</>run不能返回任何值
  *
  * @author Alphonse
  * @date 2019/12/2 15:13
@@ -44,5 +44,45 @@ public class T2 {
                 exec.shutdown();
             }
         }
+    }
+}
+
+class SimplePriorities implements Runnable {
+    private int countDown = 5;
+    private volatile double d;
+    private int priority;
+
+    public SimplePriorities(int priority) {
+        this.priority = priority;
+    }
+
+    @Override
+    public String toString() {
+        return "SimplePriorities{Thread: " +
+                Thread.currentThread() +
+                "countDown=" + countDown +
+                '}';
+    }
+
+    @Override
+    public void run() {
+        Thread.currentThread().setPriority(priority);
+        while(true){
+            for (int i = 0; i < 100000; i++) {
+                d += (Math.PI + Math.E) / (double)i;
+                if(i % 1000 == 0)
+                    Thread.yield();
+            }
+            System.out.println(this);
+            if(--countDown == 0) return;
+        }
+    }
+
+    public static void main(String[] args) {
+        ExecutorService exec = Executors.newCachedThreadPool();
+        for (int i = 0; i < 1; i++) {
+            exec.execute(new SimplePriorities(Thread.MIN_PRIORITY));
+        }
+        exec.shutdown();
     }
 }
