@@ -1,4 +1,4 @@
-package com.spring.in.action.chapter02.autoBean;
+package com.spring.in.action.chapter02;
 
 import org.springframework.stereotype.Component;
 

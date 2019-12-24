@@ -1,8 +1,8 @@
-package com.spring.in.action.chapter02.autoBean.test;
+package com.spring.in.action.chapter02.test;
 
-import com.spring.in.action.chapter02.autoBean.CDPlayerConfig;
-import com.spring.in.action.chapter02.autoBean.CompactDisc;
-import com.spring.in.action.chapter02.autoBean.MediaPlayer;
+import com.spring.in.action.chapter02.CompactDisc;
+import com.spring.in.action.chapter02.CDPlayerConfig;
+import com.spring.in.action.chapter02.MediaPlayer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
