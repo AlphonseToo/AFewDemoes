@@ -11,10 +11,12 @@ import com.fingard.rabbit.cloudtools.common.util.EncryptUtils;
  **/
 public class JJJJJ {
     public static void main(String[] args) {
-        String userName = "superadmin";
+        String userName = "admin";
         String userPwd = "111111";
+        String pp = "4c46f2e1706c97ad404393fa22560b3b";
         String password = EncryptUtils.encryptString("MD5", userName + userPwd);
         System.out.println("密码加密后为：" + password);
+        System.out.println((pp.equals(password) ? "一致" : "不一致"));
     }
 }
 
