@@ -10,7 +10,7 @@ package com.spring.in.action.chapter01;
 public class DamselRescuingKnight implements Knight {
     private Quest quest;
     public DamselRescuingKnight(Quest quest) {
-        this.quest = quest; // 紧耦合
+        this.quest = quest;
     }
     public void embarkOnQuest() {
         quest.embark();

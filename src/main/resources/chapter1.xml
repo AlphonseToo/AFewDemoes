@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="quest" class="com.spring.in.action.chapter01.RescueDamselQuest">
+        <constructor-arg value="sa"/>
+    </bean>
+    <bean id="knight" class="com.spring.in.action.chapter01.DamselRescuingKnight">
+        <constructor-arg ref="quest"/>
+    </bean>
+    <bean id="minstrel" class="com.spring.in.action.chapter01.Minstrel"/>
+
+    <aop:config>
+        <aop:aspect ref="minstrel">
+            <aop:pointcut id="embark" expression="execution(* *.embarkOnQuest(..))"/>
+            <aop:before method="singBeforeQuest" pointcut-ref="embark"/>
+            <aop:after method="afterBeforeQuest" pointcut-ref="embark"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
