@@ -8,5 +8,6 @@ package com.spring.in.action.chapter02;
  * @since 1.0
  **/
 public interface CompactDisc {
+    int i = 0;
     void play();
 }

@@ -1,5 +1,7 @@
 package com.spring.in.action.chapter02;
 
+import org.springframework.stereotype.Component;
+
 /**
  * TODO
  *
@@ -7,10 +9,10 @@ package com.spring.in.action.chapter02;
  * @date 2019/12/23 15:53
  * @since 1.0
  **/
-//@Component
+@Component("sgt1")
 public class SgtOnions implements CompactDisc {
     @Override
     public void play() {
-        System.out.println("Onion is Onion");
+        System.out.println("Onion is Onion" + i);
     }
 }
