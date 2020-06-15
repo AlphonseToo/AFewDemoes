@@ -6,6 +6,7 @@ import com.spring.in.action.chapter02.MediaPlayer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -25,6 +26,7 @@ public class CDPlayerTest {
     @Resource(name = "sgt1")
     private CompactDisc compactDisc;
     @Autowired
+    @Qualifier(value = "CDPlayer")
     private MediaPlayer mp;
 
 
@@ -32,6 +34,7 @@ public class CDPlayerTest {
     public void cdShould(){
         assert compactDisc != null;
         compactDisc.play();
+
     }
 
     @Test
