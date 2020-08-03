@@ -13,7 +13,10 @@ import lombok.extern.slf4j.Slf4j;
 public class Exception {
     public static void main(String[] args) {
         try {
-            System.out.println(1/0);
+            StringBuilder sb = new StringBuilder("11,22,33,");
+            System.out.println(sb.deleteCharAt(sb.lastIndexOf(",")));
+            System.out.println(sb);
+            //System.out.println(1/0);
         } catch (java.lang.Exception e) {
             log.error(e.getMessage(), e.getCause());
             System.out.println("-----------------------------------------");
