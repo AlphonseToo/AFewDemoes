@@ -18,7 +18,7 @@ public class CreateNewFile {
             if (!file.exists()) {
                 //file.createNewFile();
                 if (!file.mkdirs()) {
-                    throw new Exception("生成本地目录失败！");
+                    throw new Exception();
                 }
                 //file.mkdir();
             }
