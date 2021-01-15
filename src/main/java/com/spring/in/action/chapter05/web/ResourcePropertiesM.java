@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.web.ResourceProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * TODO
+ * ****
  *
  * @author Alphonse
  * date 2020/1/7 15:36

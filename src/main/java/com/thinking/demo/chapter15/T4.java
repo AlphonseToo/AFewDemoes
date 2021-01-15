@@ -38,17 +38,17 @@ public class T4<T> {
         intHolder.set(3);
 
     }
-    // TODO **********************************
+    // **** **********************************
     void ff(Holder<? super T> holder, T arg) {
         holder.set(arg);
-        //T t = holder.get(); // TODO ??
+        //T t = holder.get(); // **** ??
         Object object = holder.get();
     }
     void gg(Holder<? extends T> holder, T arg) {
         //holder.set(arg);
         T t = holder.get();
     }
-    // TODO ***********************************
+    // **** ***********************************
     /**
      * 写数据用 <? super T> 存储数据，因为元素T是可以向上转型为T的或者T的父类的（最终转型为Object）。
      * 读数据用 <? extends T> 读数据是类型为? extends T的元素保证是可以向上转换为T的。

@@ -1,16 +1,16 @@
 package com;
 
-import cn.hutool.core.date.DateTime;
-import com.fingard.ats.core.utils.AtsDateUtils;
-import sun.misc.BASE64Encoder;
+import cn.hutool.core.date.DateUnit;
+import cn.hutool.core.date.DateUtil;
+import com.fingard.ats.core.exception.AtsBizException;
 
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TimeZone;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * demooo
@@ -21,55 +21,53 @@ import java.util.TimeZone;
  **/
 public class Demo {
     public static void main(String[] args) throws ParseException, UnsupportedEncodingException {
-        String dateTime = "2015-01-05 06:30:03.300";
-        String dateTime1 = "20150105063003Z";
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss'Z'");
-        format.setTimeZone(TimeZone.getTimeZone("UTC"));
-        System.out.println(format.parse(dateTime1).getTime());
-        //DateTime ti = AtsDateUtils.parse(dateTime1, format);
-        DateTime ti = AtsDateUtils.parse(dateTime1, "yyyyMMddHHmmss'Z'");
-        // ti.setTimeZone(TimeZone.getTimeZone("UTC"));
-        //System.out.println(ti.toString(TimeZone.getTimeZone("UTC")));
-        System.out.println(ti.getTime());
 
-        String username = "fund01";
-        String password = "uat@fund#";
-        String au = username + ":" + password;
-        BASE64Encoder base = new BASE64Encoder();
-        String encodedPassword = base.encode(au.getBytes("UTF-8"));
-        System.out.println(encodedPassword);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println(sdf.format(new Date()));
 
-        StringBuilder message = new StringBuilder("12；");
-        message.setCharAt(message.length() - 1, '1');
-        String ss = message.toString();
-        System.out.println(ss);
-        Date date = AtsDateUtils.addHours(new Date(), -8);
-        System.out.println(date);
-        String sds = AtsDateUtils.format(date, "yyyyMMddHHmmss'Z'");
-        System.out.println(sds);
-
-        String dde = "@Z#S:OS&FD#%0.O@";
-        String d1 = "nishis";
-        String d2 = "你是";
-        String s = d1 + dde + d2;
-        String[] sspl = s.split(dde);
-        System.out.println(sspl[0]);
-        System.out.println(sspl[1]);
-
-        Map<Integer, Integer> map111 = new HashMap<Integer, Integer>();
-        for (Map.Entry<Integer, Integer> entry : map111.entrySet()) {
-            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+        String accountNumber = "9223372036854775807";
+        int end = accountNumber.length() / 2 + accountNumber.length() % 2;
+        if (end > 18) { // 银行账户长度为32位 使用long来取值长度最长为0x7fffffffffffffffL，十进制为19位，故取前18位
+            end = 18;
         }
-        StringBuilder sb = new StringBuilder("我是测试");
-        System.out.println(sb.substring(0, sb.length() > 4 ? 4 : sb.length()));
-        String s1 = "@";
-        String[] sss = s1.split("@");
-        System.out.println(sss.length);
+        for (; end > 0; end--) {
+            Long key;
+            try {
+                key = Long.parseLong(accountNumber.substring(0, end));
+                System.out.println(key);
+            } catch (Exception e) {
+                throw new AtsBizException("CNAPSERVICE001", e);
+            }
+        }
 
-        Map<String, Object> map = new HashMap<>();
-        map.put("ext_field_1", "1");
-        map.put("ext_field_2", "2");
-        map.put("ext_field_3", "3");
-        map.put("user_name", "name");
+
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("1", "2020-12-24");
+//        Date endDate = new SimpleDateFormat("yyyy-MM-dd HH:ss:mm.SSS").parse(map.get("1") + " 23:59:59.999");
+//        System.out.println(endDate);
+//        int i = new Date().compareTo(endDate);
+//        System.out.println(i);
+//        System.out.println(new Date());
+
+        StringBuilder s = new StringBuilder();
+        s.append("123");
+        s.append(",");
+        s.deleteCharAt(s.length()-1);
+        System.out.println("s:"+s);
+        String a = "2,3,4";
+        String b = "2,3,1";
+        String[] aList = a.split(",");
+        String[] bList = b.split(",");
+        Set<String> aSet = Arrays.stream(aList).collect(Collectors.toSet());
+        Set<String> bSet = Arrays.stream(bList).collect(Collectors.toSet());
+        System.out.println(aSet.containsAll(bSet));
+
+        String start = "2020-01-04 08:30:30";
+        String endd = "2020-01-04 10:20:30";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date sd = format.parse(start);
+        Date ed = format.parse(endd);
+        long i = DateUtil.between(sd, ed, DateUnit.MINUTE);
+        System.out.println("耗时（分钟）：" + i);
     }
 }

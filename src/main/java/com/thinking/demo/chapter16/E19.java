@@ -3,7 +3,7 @@ package com.thinking.demo.chapter16;
 import java.util.Arrays;
 
 /**
- * TODO
+ * ****
  * String类中的常量CASE_INSENSITIVE_ORDER，在自己定义的比较器中，先判断全部大写是否相等，在判断小写是否相等，是否多余
  * @author Alphonse
  * @date 2019/11/21 11:05
