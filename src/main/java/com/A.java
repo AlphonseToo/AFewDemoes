@@ -27,6 +27,7 @@ public class A implements Alph {
     }
 
     private void functionC() {
+        System.out.println("function C");
         functionB();
     }
 }

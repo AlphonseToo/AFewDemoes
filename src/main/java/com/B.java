@@ -1,11 +1,8 @@
 package com;
 
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
+import java.math.BigDecimal;
 
 /**
  * B
@@ -15,30 +12,26 @@ import java.util.Map;
  * @date 2021/1/13 15:56
  **/
 @Component
-public class B extends A implements ApplicationContextAware {
-
-    private static ApplicationContext applicationContext = null;
+public class B extends A {
 
     @Override
     protected void functionB() {
         System.out.println("方法BB");
     }
 
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        B.applicationContext = applicationContext;
+    protected void functionC() {
+        System.out.println("方法CC");
     }
 
-
-    public static ApplicationContext getApplicationContext() {
-        return applicationContext;
-    }
 
     public static void main(String[] args) {
         B b = new B();
         b.functionA();
         System.out.println(b.b);
-        Map<String, Alph> beansOfType = B.getApplicationContext().getBeansOfType(Alph.class);
-        System.out.println(beansOfType);
+
+        BigDecimal a = new BigDecimal(12);
+        BigDecimal bb = new BigDecimal(13);
+        a = a.add(bb);
+        System.out.println(a);
     }
 }
