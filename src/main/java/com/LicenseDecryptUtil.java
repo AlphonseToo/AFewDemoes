@@ -3,8 +3,6 @@ package com;
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.json.JSONUtil;
-import com.alibaba.fastjson.JSONObject;
-import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -58,7 +56,7 @@ public class LicenseDecryptUtil {
             throw new RuntimeException("验签失败！");
         }
 		// 基本信息集合
-        Map<String, String> baseInfoMap = (Map) JSONObject.parse(rsaDecrypt);
+        Map<String, String> baseInfoMap = (Map) JSONUtil.parse(rsaDecrypt);
         // AES解密key
         String signKey = MD5Sign(rsaDecrypt).replaceAll("\r\n", "");
         // AES解密
@@ -100,7 +98,7 @@ public class LicenseDecryptUtil {
         KeyFactory keyFactory = KeyFactory.getInstance(RSA_KEY_ALGORITHM);
         Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm());
         cipher.init(Cipher.DECRYPT_MODE, getPublicKey(keyFactory, publicKeyStr));
-        byte[] doFinal = cipher.doFinal(Base64.decodeBase64(data));
+        byte[] doFinal = cipher.doFinal(cn.hutool.core.codec.Base64.decode(data));
         return new String(doFinal, StandardCharsets.UTF_8);
     }
 
@@ -145,7 +143,7 @@ public class LicenseDecryptUtil {
         Signature signature = Signature.getInstance(SIGNATURE_ALGORITHM);
         signature.initVerify(getPublicKey(keyFactory, publicKeyStr));
         signature.update(data.getBytes(StandardCharsets.UTF_8));
-        return signature.verify(Base64.decodeBase64(sign));
+        return signature.verify(cn.hutool.core.codec.Base64.decode(sign));
     }
 
     /**
@@ -155,7 +153,7 @@ public class LicenseDecryptUtil {
      * @return
      */
     public static PublicKey getPublicKey(KeyFactory keyFactory, String publicKeyStr) throws Exception {
-        return keyFactory.generatePublic(new X509EncodedKeySpec(Base64.decodeBase64(publicKeyStr)));
+        return keyFactory.generatePublic(new X509EncodedKeySpec(cn.hutool.core.codec.Base64.decode(publicKeyStr)));
     }
 
     /**
@@ -174,7 +172,7 @@ public class LicenseDecryptUtil {
         SecretKeySpec secretKeySpec = new SecretKeySpec(keygen.generateKey().getEncoded(), AES_KEY_ALGORITHM);
         Cipher cipher = Cipher.getInstance(AES_KEY_ALGORITHM);
         cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
-        byte[] doFinal = cipher.doFinal(Base64.decodeBase64(data));
+        byte[] doFinal = cipher.doFinal(cn.hutool.core.codec.Base64.decode(data));
         return new String(doFinal, StandardCharsets.UTF_8);
     }
 
@@ -188,7 +186,7 @@ public class LicenseDecryptUtil {
     public static String MD5Sign(String data) throws Exception {
         MessageDigest md = MessageDigest.getInstance("MD5");
         md.update(data.getBytes(StandardCharsets.UTF_8));
-        return Base64.encodeBase64String(md.digest());
+        return cn.hutool.core.codec.Base64.encode(md.digest());
     }
 
     /**

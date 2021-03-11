@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+    <bean id="listener" class="com.springsecret.DowJonesNewsListener"/>
+    <alias name="listener" alias="asasdas"/>
+    <alias name="listener" alias="listener2，21"/>
+
+    <bean id="stringPrinter" class="com.springsecret.chapter345.StringPrinter" name="printer"/>
+    <alias name="stringPrinter" alias="listener2"/>
+    <bean class="com.springsecret.chapter345.IntegerPrinter"/>
+    <bean class="com.springsecret.chapter345.DoublePrinter"/>
+    <bean class="com.springsecret.chapter345.PrinterHandle"/>
+</beans>
