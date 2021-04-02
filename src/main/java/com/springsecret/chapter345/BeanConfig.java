@@ -1,8 +1,5 @@
 package com.springsecret.chapter345;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-
 /**
  * BeanConfig
  *
@@ -10,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
  * @version 1.0
  * @date 2021/3/5 10:58
  **/
-@Configuration
-@ComponentScan(basePackages = "com.springsecret.chapter345")
+//@Configuration
+//@ComponentScan(basePackages = {"com.springsecret.chapter345", "com.springsecret.chapter9"})
 public class BeanConfig {
 }

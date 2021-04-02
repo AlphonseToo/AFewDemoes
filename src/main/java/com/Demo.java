@@ -51,8 +51,8 @@ public class Demo {
         StringBuilder s = new StringBuilder();
         s.append("123");
         s.append(",");
-        s.deleteCharAt(s.length()-1);
-        System.out.println("s:"+s);
+        s.deleteCharAt(s.length() - 1);
+        System.out.println("s:" + s);
         String a = "2,3,4";
         String b = "2,3,1";
         String[] aList = a.split(",");

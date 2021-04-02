@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://www.springframework.org/schema/beans"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd"
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd"
        default-autowire="byName">
+    <context:component-scan base-package="com.springsecret"/>
+    <aop:aspectj-autoproxy proxy-target-class="true">
+    </aop:aspectj-autoproxy>
+<!--    <aop:config>-->
+<!--        <aop:aspect id="myAspect1" ref="myAspect">-->
+<!--            <aop:pointcut id="point1" expression="execution(public *.*(*))"/>-->
+<!--            <aop:pointcut id="point2" expression=""/>-->
+<!--            <aop:after pointcut-ref="point1" method="here2"/>-->
+<!--            <aop:after pointcut="execution(public print(*))" method="here2"/>-->
+<!--            <aop:after-returning method="here5" pointcut-ref="point1" returning="retValue"/>-->
+<!--            <aop:around method="here1" pointcut-ref="point1"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
     <bean id="listener" class="com.springsecret.DowJonesNewsListener"/>
-    <alias name="listener" alias="asasdas"/>
-    <alias name="listener" alias="listener2，21"/>
+    <alias name="listener" alias="listener1"/>
 
-    <bean id="stringPrinter" class="com.springsecret.chapter345.StringPrinter" name="printer"/>
-    <alias name="stringPrinter" alias="listener2"/>
-    <bean class="com.springsecret.chapter345.IntegerPrinter"/>
-    <bean class="com.springsecret.chapter345.DoublePrinter"/>
-    <bean class="com.springsecret.chapter345.PrinterHandle"/>
+<!--    <bean id="stringPrinter" class="com.springsecret.chapter345.StringPrinter" name="printer"/>-->
+<!--    <bean class="com.springsecret.chapter345.IntegerPrinter"/>-->
+<!--    <bean class="com.springsecret.chapter345.DoublePrinter"/>-->
+<!--    <bean class="com.springsecret.chapter345.PrinterHandle"/>-->
 </beans>

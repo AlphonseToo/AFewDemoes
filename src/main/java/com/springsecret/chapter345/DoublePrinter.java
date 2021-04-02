@@ -1,5 +1,6 @@
 package com.springsecret.chapter345;
 
+import com.springsecret.chapter10.MyAnnotation;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 @Order(3)
 public class DoublePrinter implements Printer<Double> {
     @Override
+    @MyAnnotation
     public void print(Double aDouble) {
         System.out.println("打印双精度浮点数：" + aDouble);
     }

@@ -33,5 +33,6 @@ public class B extends A {
         BigDecimal bb = new BigDecimal(13);
         a = a.add(bb);
         System.out.println(a);
+        b.functionC();
     }
 }

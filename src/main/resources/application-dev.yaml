@@ -1,4 +1,4 @@
-debug: true
+debug: false
 cpuSize: i7-8700K
 age: 1
 context: "cpusize: ${cpuSize} + age:${age}" #zhujei

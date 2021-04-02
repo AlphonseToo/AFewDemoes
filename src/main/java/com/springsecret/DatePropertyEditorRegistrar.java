@@ -2,7 +2,6 @@ package com.springsecret;
 
 import org.springframework.beans.PropertyEditorRegistrar;
 import org.springframework.beans.PropertyEditorRegistry;
-import org.springframework.stereotype.Component;
 
 import java.beans.PropertyEditor;
 
@@ -13,7 +12,6 @@ import java.beans.PropertyEditor;
  * @version 1.0
  * @date 2021/2/26 09:07
  **/
-@Component
 public class DatePropertyEditorRegistrar implements PropertyEditorRegistrar {
 
     private PropertyEditor propertyEditor;

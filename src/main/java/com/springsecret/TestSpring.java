@@ -1,6 +1,5 @@
 package com.springsecret;
 
-import com.springsecret.chapter345.StringPrinter;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -14,9 +13,9 @@ public class TestSpring {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:application.xml");
-        DowJonesNewsListener listener = (DowJonesNewsListener)applicationContext.getBean("listener");
-        System.out.println();
-        listener.getNews();
+//        DowJonesNewsListener listener = (DowJonesNewsListener)applicationContext.getBean("listener");
+//        System.out.println();
+//        listener.getNews();
         System.out.println();
         String[] listeners = applicationContext.getAliases("listener");
         System.out.print("别名：");
@@ -24,9 +23,9 @@ public class TestSpring {
             System.out.print(s + ",");
         }
         System.out.println();
-        StringPrinter printer = (StringPrinter)applicationContext.getBean("listener2");
-        printer.print("s");
-//        DowJonesNewsListener bean = (DowJonesNewsListener)applicationContext.getBean("listener2");
-        System.out.println(printer);
+//        StringPrinter printer = (StringPrinter)applicationContext.getBean("listener2");
+//        printer.print("s");
+////        DowJonesNewsListener bean = (DowJonesNewsListener)applicationContext.getBean("listener2");
+//        System.out.println(printer);
     }
 }

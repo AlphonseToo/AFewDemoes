@@ -30,4 +30,10 @@ public class A implements Alph {
         System.out.println("function C");
         functionB();
     }
+
+    public static void main(String[] args) {
+        String objectName = "1weq.txt";
+        System.out.println(objectName.lastIndexOf("."));
+        System.out.println(objectName.substring(objectName.lastIndexOf(".")));
+    }
 }
