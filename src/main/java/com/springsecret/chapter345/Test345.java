@@ -12,7 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @version 1.0
  * @date 2021/3/5 11:02
  **/
-public class Test implements ApplicationContextAware {
+public class Test345 implements ApplicationContextAware {
 
     ApplicationContext applicationContext;
 

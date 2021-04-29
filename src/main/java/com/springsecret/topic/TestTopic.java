@@ -6,7 +6,7 @@ package com.springsecret.topic;
  * @author Alphonse
  * @version 1.0
  **/
-public class Test {
+public class TestTopic {
     public static void main(String[] args) {
 
     }

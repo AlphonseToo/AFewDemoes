@@ -9,7 +9,7 @@ import org.springframework.cglib.proxy.Enhancer;
  * @version 1.0
  * @date 2021/3/16 17:34
  **/
-public class Test {
+public class Test78 {
 
     public static void main(String[] args) {
         Enhancer enhancer = new Enhancer();
