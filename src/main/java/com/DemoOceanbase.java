@@ -11,8 +11,7 @@ import java.sql.*;
 public class DemoOceanbase {
 
     public static void main(String[] args) throws Exception {
-        String uu = "mysql --prompt OceanBase(\\u@\\d)> -h 10.60.44.15 -P 2881 -umyob -pmyob123@% -Doceanbase -c";
-        String url = "jdbc:oceanbase:oracle://10.60.44.15:2881/SYS";
+        String url = "jdbc:oceanbase:oracle://10.60.44.15:2881/luna_accounts_13";
         String username = "sys@oracle";
         String password = null;
         Connection conn = null;
@@ -20,13 +19,13 @@ public class DemoOceanbase {
             Class.forName("com.alipay.oceanbase.jdbc.Driver");
             conn = DriverManager.getConnection(url, username, password);
 //            PreparedStatement ps = conn.prepareStatement("select to_char(sysdate,'yyyy-MM-dd HH24:mi:ss') from dual;");
-            PreparedStatement ps = conn.prepareStatement("select count(*) from user_tables;");
+            PreparedStatement ps = conn.prepareStatement("select count(*) from tsys_user;");
             ResultSet rs = ps.executeQuery();
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
             System.out.println("columnCount:" + columnCount);
             rs.next();
-            System.out.println("sysdate is:" + rs.getString(1));
+            System.out.println("result is:" + rs.getString(1));
             rs.close();
             ps.close();
         } catch (Exception e) {

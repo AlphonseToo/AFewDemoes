@@ -1,5 +1,6 @@
 package com.zyf.demo;
 
+import com.zyf.demo.mypackage.Pck1;
 import lombok.Data;
 
 /**
@@ -17,13 +18,17 @@ public class BookDetail {
     private String author = "z";
     private String introduction = "......";
 
-    /*@Override
+    @Override
     public String toString() {
-        return "BookDetial{" +
+        return "BookDetail{" +
                 "no=" + no +
                 ", name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", introduction='" + introduction + '\'' +
                 '}';
-    }*/
+    }
+
+    public static void main(String[] args) {
+        Pck1.main(new String[]{"a"});
+    }
 }
