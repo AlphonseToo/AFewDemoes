@@ -11,15 +11,15 @@ import java.sql.*;
 public class DemoOceanbase {
 
     public static void main(String[] args) throws Exception {
-        String url = "jdbc:oceanbase:oracle://10.60.44.15:2881/luna_accounts_13";
-        String username = "sys@oracle";
-        String password = null;
+        String url = "jdbc:oceanbase:oracle://t2oa8htnwmtfkmo.oceanbase.aliyuncs.com:1521";
+        String username = "dev_cicfs5";
+        String password = "Fingard123!";
         Connection conn = null;
         try {
             Class.forName("com.alipay.oceanbase.jdbc.Driver");
             conn = DriverManager.getConnection(url, username, password);
-//            PreparedStatement ps = conn.prepareStatement("select to_char(sysdate,'yyyy-MM-dd HH24:mi:ss') from dual;");
-            PreparedStatement ps = conn.prepareStatement("select count(*) from tsys_user;");
+            PreparedStatement ps = conn.prepareStatement("select to_char(sysdate,'yyyy-MM-dd HH24:mi:ss') from dual;");
+//            PreparedStatement ps = conn.prepareStatement("select count(*) from tsys_user;");
             ResultSet rs = ps.executeQuery();
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
