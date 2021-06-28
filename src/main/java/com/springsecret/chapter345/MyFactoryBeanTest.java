@@ -31,10 +31,10 @@ public class MyFactoryBeanTest {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfig.class);
-        MyFactoryBeanTest myFactoryBeanTest = (MyFactoryBeanTest)applicationContext.getBean("myFactoryBeanTest");
+//        MyFactoryBeanTest myFactoryBeanTest = (MyFactoryBeanTest)applicationContext.getBean("myFactoryBeanTest");
         System.out.print("时间：");
-        System.out.println(myFactoryBeanTest.getDate());
-        Object bean1 = applicationContext.getBean("myFactoryBean");
+//        System.out.println(myFactoryBeanTest.getDate());
+        Object bean1 = applicationContext.getBean("myFactoryBean", "a");
         Object bean2 = applicationContext.getBean("&myFactoryBean");
         System.out.println("bean1: " + bean1.getClass());
         System.out.println("bean2: " + bean2.getClass());
