@@ -1,6 +1,5 @@
 package com;
 
-import com.sunyard.insurance.base.util.crypto.MD5Util;
 import com.sunyard.insurance.ecm.socket.client.AutoScanApi;
 
 /**
@@ -13,8 +12,8 @@ public class FileTest {
 
     public static void main(String[] args) throws Exception {
         String filePath = "C:\\Users\\DELL\\Desktop\\role.zip";
-        String s = MD5Util.getFileMD5(filePath).toLowerCase();
-        System.out.println(s);
+//        String s = MD5Util.getFileMD5(filePath).toLowerCase();
+//        System.out.println(s);
         System.out.println("5785fb24c413b4c44ac018fced07b565");
 
         String zipPath = "C:\\Users\\DELL\\Desktop\\role.zip";

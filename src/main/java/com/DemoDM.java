@@ -3,29 +3,34 @@ package com;
 import java.sql.*;
 
 /**
- * DemoTDSql
+ * DemoDM
  *
  * @author Alphonse
  * @version 1.0
  **/
-public class DemoTDSql {
+public class DemoDM {
 
     public static void main(String[] args) throws Exception {
-        String url = "jdbc:mysql://tdsqlshard-f7m038fi.sql.tencentcdb.com:6/luna";
-        String username = "luna";
-        String password = "Fingard1!";
+        String url = "jdbc:dm://10.60.44.54:5236";
+        String username = "LUNA";
+        String password = "123456789";
         Connection conn = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("dm.jdbc.driver.DmDriver");
             conn = DriverManager.getConnection(url, username, password);
-            PreparedStatement ps = conn.prepareStatement("select sysdate() from dual;");
+            DatabaseMetaData metaData1 = conn.getMetaData();
+            System.out.println(metaData1.getDatabaseProductName());
+            PreparedStatement ps = conn.prepareStatement("select * from tsys_user1;");
 //            PreparedStatement ps = conn.prepareStatement("select count(*) from tsys_user;");
             ResultSet rs = ps.executeQuery();
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
             System.out.println("columnCount:" + columnCount);
-            rs.next();
-            System.out.println("result is:" + rs.getString(1));
+            while(rs.next()) {
+                for (int i = 0; i < columnCount; i++) {
+                    System.out.println(metaData.getColumnName(i+1) + ":" + rs.getString(i+1));
+                }
+            }
             rs.close();
             ps.close();
         } catch (Exception e) {
