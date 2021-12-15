@@ -2,6 +2,7 @@ package com.springsecret.chapter78;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * MyInvocationHandler
@@ -14,8 +15,15 @@ public class MyInvocationHandler implements InvocationHandler {
 
     private Object o;
 
+    public MyInvocationHandler() {}
+
     public MyInvocationHandler(Object o) {
         this.o = o;
+    }
+
+    public Object myNewProxyInstance(Object o) {
+        this.o = o;
+        return Proxy.newProxyInstance(o.getClass().getClassLoader(), o.getClass().getInterfaces(), this);
     }
 
     @Override

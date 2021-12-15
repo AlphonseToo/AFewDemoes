@@ -20,8 +20,15 @@ public class MyInvocationHandlerTest extends Requestable {
         iRequest.request();
     }
 
+    void test1() {
+        IRequest myRequest = new MyRequest();
+        IRequest iRequest = (IRequest)new MyInvocationHandler().myNewProxyInstance(myRequest);
+        iRequest.request();
+    }
+
     public static void main(String[] args) {
         MyInvocationHandlerTest test = new MyInvocationHandlerTest();
         test.test();
+        test.test1();
     }
 }

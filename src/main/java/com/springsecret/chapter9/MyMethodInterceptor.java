@@ -2,6 +2,7 @@ package com.springsecret.chapter9;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
+import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +23,9 @@ public class MyMethodInterceptor implements MethodInterceptor {
     public Object invoke(MethodInvocation methodInvocation) throws Throwable {
         try {
             System.out.println("方法B");
+            Enhancer enhancer = new Enhancer();
+//            enhancer.setCallback(this);
+            enhancer.create();
             return methodInvocation.proceed();
         } finally {
             System.out.println("方法B: finally");

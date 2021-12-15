@@ -1,7 +1,5 @@
 package com;
 
-import com.sunyard.insurance.ecm.socket.client.AutoScanApi;
-
 /**
  * FileTest
  *
@@ -18,9 +16,9 @@ public class FileTest {
 
         String zipPath = "C:\\Users\\DELL\\Desktop\\role.zip";
         try {
-            AutoScanApi autoScanApi = new AutoScanApi("127.0.0.1", 22, "sunyard02");
-            String returnMsg = autoScanApi.ScanImageFile("UWC", zipPath);
-            System.out.println("returnMsg == " + returnMsg);
+//            AutoScanApi autoScanApi = new AutoScanApi("127.0.0.1", 22, "sunyard02");
+//            String returnMsg = autoScanApi.ScanImageFile("UWC", zipPath);
+//            System.out.println("returnMsg == " + returnMsg);
         } catch (Exception var4) {
             var4.printStackTrace();
         }
