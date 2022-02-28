@@ -1,7 +1,5 @@
 package com.thinking.demo.chapter15;
 
-import sun.net.www.content.text.Generic;
-
 import java.lang.reflect.Constructor;
 
 /**
@@ -46,12 +44,3 @@ public class E22 {
     }
 }
 
-class ArrayGR {
-    static Generic[] gia;
-
-    public static void main(String[] args) {
-        gia = new Generic[10];
-        gia[0] = new Generic();
-
-    }
-}
