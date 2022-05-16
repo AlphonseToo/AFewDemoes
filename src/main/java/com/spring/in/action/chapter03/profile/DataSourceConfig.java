@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import javax.sql.DataSource;
+
 /**
  * ****
  *
@@ -13,6 +15,8 @@ import org.springframework.context.annotation.Profile;
  **/
 @Configuration
 public class DataSourceConfig {
+
+    DataSource dataSource;
 
     @Bean
     @Profile("dev")
